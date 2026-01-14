@@ -63,7 +63,7 @@ Users can enter details like:
 
 1. Clone repository:  
 ```bash
-git clone https://github.com/yourusername/housing-price-prediction.git
+git clone https://github.com/Anbuselvan-22/housing-price-prediction.git
 cd housing-price-prediction
 Create virtual environment:
 python -m venv venv
