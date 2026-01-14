@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Housing Price Prediction</title>
+  <link rel="stylesheet" href="/static/style.css">
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>🏠 Housing Price Prediction</h1>
+      <p>Predict house price using Machine Learning</p>
+    </div>
+
+    <form action="/predict" method="post">
+
+      <div class="card">
+        <label>Area (sq ft)</label>
+        <input type="number" name="area" placeholder="e.g. 7420" required>
+      </div>
+
+      <div class="card">
+        <label>Bedrooms</label>
+        <input type="number" name="bedrooms" placeholder="e.g. 4" required>
+      </div>
+
+      <div class="card">
+        <label>Bathrooms</label>
+        <input type="number" name="bathrooms" placeholder="e.g. 2" required>
+      </div>
+
+      <div class="card">
+        <label>Stories</label>
+        <input type="number" name="stories" placeholder="e.g. 3" required>
+      </div>
+
+      <div class="card">
+        <label>Main Road</label>
+        <select name="mainroad">
+          <option value="" disabled selected>Select</option>
+          <option value="1">Yes</option>
+          <option value="0">No</option>
+        </select>
+      </div>
+
+      <div class="card">
+        <label>Guest Room</label>
+        <select name="guestroom">
+          <option value="" disabled selected>Select</option>
+          <option value="1">Yes</option>
+          <option value="0">No</option>
+        </select>
+      </div>
+
+      <div class="card">
+        <label>Basement</label>
+        <select name="basement">
+          <option value="" disabled selected>Select</option>
+          <option value="1">Yes</option>
+          <option value="0">No</option>
+        </select>
+      </div>
+
+      <div class="card">
+        <label>Hot Water Heating</label>
+        <select name="hotwaterheating">
+          <option value="" disabled selected>Select</option>
+          <option value="1">Yes</option>
+          <option value="0">No</option>
+        </select>
+      </div>
+
+      <div class="card">
+        <label>Air Conditioning</label>
+        <select name="airconditioning">
+          <option value="" disabled selected>Select</option>
+          <option value="1">Yes</option>
+          <option value="0">No</option>
+        </select>
+      </div>
+
+      <div class="card">
+        <label>Parking</label>
+        <input type="number" name="parking" placeholder="e.g. 2" required>
+      </div>
+
+      <div class="card">
+        <label>Preferred Area</label>
+        <select name="prefarea">
+          <option value="" disabled selected>Select</option>
+          <option value="1">Yes</option>
+          <option value="0">No</option>
+        </select>
+      </div>
+
+      <div class="card">
+        <label>Furnishing Status</label>
+        <select name="furnishingstatus">
+          <option value="" disabled selected>Select</option>
+          <option value="2">Furnished</option>
+          <option value="1">Semi-Furnished</option>
+          <option value="0">Unfurnished</option>
+        </select>
+      </div>
+
+      <button type="submit" class="btn">Predict Price</button>
+    </form>
+
+    {% if prediction_text %}
+      <div class="result">{{ prediction_text }}</div>
+    {% endif %}
+
+    <div class="footer">ML Housing Price Estimator</div>
+  </div>
+</body>
+</html>
